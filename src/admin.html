@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <title>管理员页面</title>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <header>
+            <div class="logo-wrapper">
+                <svg class="icon logo" aria-hidden="true">
+                    <use xlink:href="#icon-music-logo"></use>
+                </svg>
+                <span>
+                    网易云音乐
+                </span>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <aside class="">
+
+
+
+                <div class="song-list-wrapper">
+
+
+                </div>
+
+                <div class="upload-wrapper">
+                    <div class="upload-zone" id="upload-zone">
+                        <span id="upload-bt" class="upload-bt">上传</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main>
+
+
+            </main>
+        </div>
+
+
+    </div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="//at.alicdn.com/t/font_990428_pdvkl4xqop.js" type="text/javascript"></script>
+    <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+    <script src="js/initialize/av.js"></script>
+
+    <script src="../node_modules/qiniu-js/dist/qiniu.min.js"></script>
+    <script src="../node_modules/plupload/js/moxie.min.js"></script>
+    <script src="../node_modules/plupload/js/plupload.min.js"></script>
+
+
+    <script src="js/eventHub.js"></script>
+    <script src="js/song-form.js"></script>
+    <script src="js/upload-song.js"></script>
+    <script src="js/song-list.js"></script>
+
+    <script src="../main.js"></script>
+</body>
+</html>
