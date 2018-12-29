@@ -6,6 +6,10 @@
   -webkit-box-orient: vertical;
 }
 
+.hidden {
+  display: none;
+}
+
 .admin-wrapper {
   width: 100%;
   height: 100vh;
@@ -116,7 +120,13 @@
     main {
       width: 70%;
       .upload-form {
-        padding: 50px 0 0 50px;
+        margin: 50px 0 0 50px;
+        padding: 40px;
+        border: 1px dashed #666;
+        border-radius: 10px;
+        .title {
+          font-size: 32px;
+        }
         label {
           display: block;
           user-select: none;

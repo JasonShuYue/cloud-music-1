@@ -65,7 +65,8 @@
 
                         window.eventHub.emit('upload', {
                             name: response.key,
-                            url: sourceLink
+                            url: sourceLink,
+                            type: 'create'
                         });
 
 

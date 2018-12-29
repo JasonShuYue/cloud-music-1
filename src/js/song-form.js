@@ -2,25 +2,38 @@
     let view = {
         el: '.admin-wrapper main',
         template: `
+        
         <form class="upload-form">
+            <p class="title">__type__歌曲</p>
             <label for="name">歌名:<input type="text" name="name" class="song-name" value="__name__"></label>
             <label for="singer">歌手:<input type="text" name="singer" class="singer-name" value="__singer__"></label>
             <label for="url">外链:<input type="text" name="url" class="song-url" value="__url__"></label>
             <button type="submit" class="submit-bt">保存</button>
+            <!--<button id="delete-btn" class="delete-bt">删除</button>-->
         </form>
         `,
         render(data = {}) {
             let html = this.template;
-            let placeHolder = ['name', 'singer', 'url'];
+            let placeHolder = ['name', 'singer', 'url', 'type'];
 
             placeHolder.map(key => {
-                html = html.replace(`__${key}__`, data[key] || '');
+                if(key === "type") {
+                    html = html.replace(`__${key}__`, data[key] === 'update' ? '编辑' : '新建');
+                } else {
+                    html = html.replace(`__${key}__`, data[key] || '');
+                }
             });
 
             $(this.el).html(html);
         },
         reset() {
             this.render({});
+        },
+        addHidden(dom) {
+            $(dom).addClass('hidden');
+        },
+        removeClass(dom) {
+            $(dom).removeClass('hidden');
         }
     };
 
@@ -29,15 +42,13 @@
             'name': '',
             'singer': '',
             'url': '',
-            'id': ''
+            'id': '',
+            'type': ''
         },
 
 
         create(data = {}) {
-
-            // 声明一个 Todo 类型
             var Song = AV.Object.extend('Song');
-            // 新建一个 Todo 对象
             var song = new Song();
             for(let key in data) {
                 song.set(key, data[key]);
@@ -50,8 +61,20 @@
                 // 异常处理
                 console.error('Failed to create new object, with error message: ' + error.message);
             });
+        },
 
+        update(data = {}) {
+            let {id} = data;
+            // 第一个参数是 className，第二个参数是 objectId
+            var song = AV.Object.createWithoutData('Song', id);
 
+            for(let key in data) {
+                // 修改属性
+                song.set(key, data[key]);
+            }
+
+            // 保存到云端
+            return song.save();
         }
     };
 
@@ -62,7 +85,14 @@
             this.view.render(this.model.data);
             this.bindEvents();
             window.eventHub.on('upload', (data) => {
-                this.view.render(data);
+                Object.assign(this.model.data, data)
+                this.view.render(this.model.data);
+            });
+
+            window.eventHub.on('select', (data) => {
+                // this.model.data = data;
+                Object.assign( this.model.data, data);
+                this.view.render(this.model.data);
             });
         },
         bindEvents() {
@@ -74,12 +104,23 @@
                     let value = $(this.view.el).find(`input[name=${key}]`).val();
                     hash[key] = value;
                 });
-                this.model.data = hash;
-                this.model.create(this.model.data)
-                    .then(() => {
-                        this.view.reset();
-                        window.eventHub.emit('create', this.model.data);
-                    });
+                Object.assign(this.model.data, hash);
+
+                if(this.model.data.type !== "update") {
+                    this.model.create(this.model.data)
+                        .then(() => {
+                            this.view.reset();
+                            window.eventHub.emit('create', this.model.data);
+                        });
+                } else {
+                    this.model.update(this.model.data)
+                        .then(() => {
+                            this.view.reset();
+                            window.eventHub.emit('update', this.model.data);
+                        });
+                    this.view.reset();
+                }
+
             })
         }
 

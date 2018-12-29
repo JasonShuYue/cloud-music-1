@@ -54,6 +54,15 @@
                 })
                 return songs;
             })
+        },
+
+        updateItem(data) {
+            let {id} = data;
+            this.data.songs.map((item) => {
+                if(item.id === id) {
+                    Object.assign(item, data);
+                }
+            });
         }
     };
 
@@ -74,17 +83,25 @@
                 this.model.data.songs.unshift(data);
                 this.view.render(this.model.data)
             });
+
+            window.eventHub.on('update', (data) => {
+                this.model.updateItem(data);
+                this.view.render(this.model.data);
+            });
         },
         bindEvents() {
             $(this.view.el).on('click', 'li', (e) => {
                 let id = $(e.currentTarget).attr('data-song-id');
-                let data = this.model.data.songs.forEach((song) => {
+                let data ;
+                this.model.data.songs.forEach((song) => {
                     if(song.id === id) {
-                        return song;
+                        data = song;
                     }
-                })
-                console.log(data);
+                });
+
                 this.view.addActive(e.currentTarget);
+
+                window.eventHub.emit('select', Object.assign({}, data, {type: 'update'}));
 
             })
         }
