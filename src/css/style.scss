@@ -10,6 +10,42 @@
   display: none;
 }
 
+.site-loading {
+  display:none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #666;
+    animation: siteLoading 1s infinite linear alternate;
+  }
+  &.active {
+    display: inherit;
+  }
+}
+@keyframes siteLoading {
+  0% {
+    transform: scale(1.0);
+    opacity: 1.0;
+  }
+
+  100% {
+    transform: scale(0.1);
+    opacity: 0.3;
+  }
+}
+
 .admin-wrapper {
   width: 100%;
   height: 100vh;
