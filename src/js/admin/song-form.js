@@ -56,7 +56,7 @@
             return song.save().then( (newSong) => {
                 // 成功保存之后，执行其他逻辑.
                 let {id, attributes} = newSong;
-                Object.assign(this.data, {id, ...attributes});
+                Object.assign(this.data, {...attributes, id});
             }, function (error) {
                 // 异常处理
                 console.error('Failed to create new object, with error message: ' + error.message);
@@ -91,7 +91,7 @@
 
             window.eventHub.on('select', (data) => {
                 // this.model.data = data;
-                Object.assign( this.model.data, data);
+                Object.assign(this.model.data, data);
                 this.view.render(this.model.data);
             });
         },

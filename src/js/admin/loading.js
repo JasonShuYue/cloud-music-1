@@ -13,7 +13,6 @@
         init(view) {
             this.view = view;
             window.eventHub.on('beforeUpload', () => {
-                console.log("before!!!!!")
                 this.view.show();
             });
             window.eventHub.on('afterUpload', () => {

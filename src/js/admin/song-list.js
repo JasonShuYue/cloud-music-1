@@ -9,23 +9,24 @@
             $(this.el).html(this.template);
             let {songs} = data;
             let liList = songs.map((song) => {
-                return $('<li></li>').attr("data-song-id", song.id)
-                    .append(`
+                return $(`
+                <li data-song-id=${song.id}>
                     <svg class="icon icon-music" aria-hidden="true">
-                        <use xlink:href="#icon-music"></use>
-                    </svg>`)
-                    .append(`
-                <div class="song-info">
-                   <p class="song-name">${song.name}</p>
-                   <div class="row">
-                       <svg class="icon icon-user" aria-hidden="true">
-                            <use xlink:href="#icon-fonts-user"></use>
-                       </svg>
-                       <span class="song-singer">${song.singer}</span>
-                   </div>
-                </div>`);
-            });
+                         <use xlink:href="#icon-music"></use>
+                     </svg>
+                     <div class="song-info">
+                        <p class="song-name">${song.name}</p>
+                        <div class="row">
+                            <svg class="icon icon-user" aria-hidden="true">
+                                 <use xlink:href="#icon-fonts-user"></use>
+                            </svg>
+                            <span class="song-singer">${song.singer}</span>
+                        </div>
+                     </div>
+                </li>
 
+                `);
+            });
             $(this.el).find('.song-list').empty();
             liList.map((domLi) => {
                 $(this.el).find('.song-list').append(domLi);
@@ -49,7 +50,7 @@
                 songs.map(song => {
                     let hash = {};
                     let {id, attributes} = song;
-                    hash = {id, ...attributes};
+                    Object.assign(hash, {...attributes, id})
                     this.data.songs.unshift(hash)
                 })
                 return songs;
@@ -100,7 +101,6 @@
                 });
 
                 this.view.addActive(e.currentTarget);
-
                 window.eventHub.emit('select', Object.assign({}, data, {type: 'update'}));
 
             })
