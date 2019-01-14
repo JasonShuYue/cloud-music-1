@@ -24,7 +24,6 @@
                         </div>
                      </div>
                 </li>
-
                 `);
             });
             $(this.el).find('.song-list').empty();

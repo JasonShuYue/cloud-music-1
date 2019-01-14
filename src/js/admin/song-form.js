@@ -8,13 +8,14 @@
             <label for="name">歌名:<input type="text" name="name" class="song-name" value="__name__"></label>
             <label for="singer">歌手:<input type="text" name="singer" class="singer-name" value="__singer__"></label>
             <label for="url">外链:<input type="text" name="url" class="song-url" value="__url__"></label>
+            <label for="url">封面:<input type="text" name="cover" class="cover-url" value="__cover__"></label>
             <button type="submit" class="submit-bt">保存</button>
             <!--<button id="delete-btn" class="delete-bt">删除</button>-->
         </form>
         `,
         render(data = {}) {
             let html = this.template;
-            let placeHolder = ['name', 'singer', 'url', 'type'];
+            let placeHolder = ['name', 'singer', 'url', 'type', 'cover'];
 
             placeHolder.map(key => {
                 if(key === "type") {
@@ -43,7 +44,8 @@
             'singer': '',
             'url': '',
             'id': '',
-            'type': ''
+            'type': '',
+            'cover': ''
         },
 
 
@@ -98,7 +100,7 @@
         bindEvents() {
             $(this.view.el).on('submit', 'form', (e) => {
                 e.preventDefault();
-                let needs = ['name', 'singer', 'url'];
+                let needs = ['name', 'singer', 'url', 'cover'];
                 let hash = {};
                 needs.map(key => {
                     let value = $(this.view.el).find(`input[name=${key}]`).val();

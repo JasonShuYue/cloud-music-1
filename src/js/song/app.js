@@ -2,10 +2,17 @@
     let view = {
         el: '#song-wrapper',
         template: `
-            <audio controls>
-              <source src=__url__ >
-            </audio>
+            <audio src=__url__></audio>
         `,
+        play() {
+          let audio = $(this.el).find('audio')[0];
+          console.log(audio)
+          audio.play();
+        },
+        pause() {
+            let audio = $(this.el).find('audio')[0];
+            audio.pause();
+        },
         render(data) {
             let html = this.template;
             html = html.replace('__url__', data.url || '');
@@ -15,10 +22,13 @@
 
     let model = {
         data: {
-            name: '',
-            singer: '',
-            id: '',
-            url: '',
+            song: {
+                name: '',
+                singer: '',
+                id: '',
+                url: '',
+            },
+            status: 'paused'
         },
         fetch() {
             let query = new AV.Query('Song');
@@ -42,7 +52,7 @@
 
             return query.get(id).then((song) => {
                 let { attributes } = song;
-                Object.assign(this.data, {...attributes});
+                Object.assign(this.data.song, {...attributes});
             }, function (error) {
                 // 异常处理
             });
@@ -57,7 +67,11 @@
             this.view = view;
             this.model = model;
             this.model.fetch().then(() => {
-                this.view.render(this.model.data)
+                this.view.render(this.model.data);
+
+                setTimeout(() => {
+                    this.view.play();
+                }, 2000);
             });
         }
     };
