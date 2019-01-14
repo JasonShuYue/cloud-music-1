@@ -8,7 +8,9 @@
     };
     let controller = {
         init(view) {
-            this.view =  view;
+            this.view = view;
+            $(this.view.el).find('[data-page-name=page-1]').addClass('active')
+                .siblings().removeClass('active');
             this.bindEvents();
         },
         bindEvents() {
@@ -16,9 +18,7 @@
                 let current = e.currentTarget;
                 this.view.activeTab(current);
                 let tabName = $(current).attr('data-page-name');
-
                 window.eventHub.emit('selectedTab', tabName);
-                // console.log(tabName)
             })
         }
     };

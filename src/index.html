@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,21 +27,68 @@
             <li class="nav-bar-item" data-page-name="page-3"><div class="tabtxt">搜索</div></li>
         </ul>
         <main id="main-content" class="main-content">
-            <div class="page-1">page1</div>
+            <div class="page-1">
+                <section class="playlists">
+                    <h2 class="sectionTitle">推荐歌单</h2>
+                    <ul class="playlists-part">
+                        <div class="row clearfix">
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                        </div>
+
+                        <div class="row clearfix">
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                            <li class="playlist-item left">
+                                <div class="playlist-img-wrapper"><img src="https://i.loli.net/2017/08/22/599ba7a0aea8b.jpg" alt="封面"></div>
+                                <p class="playlist-dec">两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字两行字</p>
+                            </li>
+                        </div>
+                    </ul>
+
+                </section>
+                <section class="latest-songs">
+                    <h2 class="sectionTitle">最新音乐</h2>
+                    <ul id="latest-songs-list" class="latest-songs-list">
+
+                    </ul>
+                </section>
+            </div>
             <div class="page-2">page2</div>
             <div class="page-3">page3</div>
         </main>
     </div>
 
 
-    <!--juqery-->
+    <!-- juqery -->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <!--icon-->
-    <script src="//at.alicdn.com/t/font_990428_pdvkl4xqop.js" type="text/javascript"></script>
+    <!-- icon -->
+    <script src="//at.alicdn.com/t/font_990428_jnkjv8hoeom.js" type="text/javascript"></script>
+
+    <!-- init lean-cloud -->
+    <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+    <script src="js/initialize/av.js"></script>
 
     <script src="js/eventHub.js"></script>
     <script src="js/index/navBar.js"></script>
     <script src="js/index/mainPage.js"></script>
+    <script src="js/index/song-list.js"></script>
 
     <script src="../main.js"></script>
 

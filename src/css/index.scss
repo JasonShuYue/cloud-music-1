@@ -1,8 +1,15 @@
-
+@mixin ellipse-line($line-num: 2){
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-num;
+  -webkit-box-orient: vertical;
+}
 
 .home-wrapper {
   min-height: 100vh;
   background: #fcfcfd;
+  overflow: hidden;
   .home-header {
     width: 100%;
     position: fixed;
@@ -65,6 +72,7 @@
     height: 40px;
     display: flex;
     border-bottom: 1px solid #efefef;
+    background: white;
     .nav-bar-item {
       width: 33.333333333%;
       height: 100%;
@@ -82,17 +90,103 @@
       &.active {
         .tabtxt {
           border-bottom: 2px solid #d43c33;
+          color: #d43c33;
         }
       }
     }
   }
   .main-content {
-    min-height: 100vh;
+    min-height: calc( 100vh - 104px );
     padding-top: 104px;
     .page-1, .page-2, .page-3 {
       display: none;
       &.active {
         display: inherit;
+      }
+    }
+    .page-1 {
+      .latest-songs, .playlists {
+        .sectionTitle {
+          position: relative;
+          margin-top: 20px;
+          padding-left: 9px;
+          margin-bottom: 14px;
+          font-size: 17px;
+          height: 20px;
+          line-height: 20px;
+          &::before {
+            content: '';
+            display: block;
+            width: 2px;
+            background: #d43c33;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+      .playlists {
+        .playlists-part {
+          overflow: hidden;
+          .row {
+            margin-bottom: 16px;
+            .playlist-item {
+              width: 33.33333333%;
+              padding: 0 1px;
+              .playlist-img-wrapper {
+                img {
+                  width: 100%;
+                }
+              }
+              .playlist-dec {
+                @include ellipse-line(2);
+              }
+            }
+          }
+
+        }
+      }
+      .latest-songs {
+        .latest-songs-list {
+          display: flex;
+          flex-wrap: wrap;
+          .song-info {
+            width: 100%;
+            padding-left: 10px;
+            .song-link {
+              width: 100%;
+              display: flex;
+              padding: 6px 0;
+              justify-content: flex-end;
+              //line-height: 1;
+              border-bottom: 1px solid #efefef;
+              .song-info-left {
+                flex: 1;
+                .song-name {
+                  font-size: 17px;
+                  color: #333333;
+                  @include ellipse-line(1);
+                }
+                .name-singer {
+                  color: #888888;
+                  .icon-hot {
+                    font-size: 18px;
+                  }
+                }
+              }
+              .song-info-right {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                .icon-play {
+                  color: rgb(51, 51, 51);
+                  font-size: 22px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
