@@ -1,5 +1,6 @@
 import '../css/common.scss';
-import '../css/style.scss';
+import '../css/admin.scss';
+import '../css/index.scss';
 
 
 

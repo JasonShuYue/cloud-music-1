@@ -1,0 +1,99 @@
+
+
+.home-wrapper {
+  min-height: 100vh;
+  background: #fcfcfd;
+  .home-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 64px;
+    background: #d43c33;
+
+    display: flex;
+    align-items: center;
+    .logo {
+      display: flex;
+      padding: 2px 0;
+      width: 100%;
+      margin: 0 10px;
+      align-items: center;
+      position: relative;
+      .music-logo {
+        background: white;
+        display: inline-block;
+        padding: 2px 3px;
+        border-radius: 5px;
+        .icon-music-logo {
+          color: #d43c33;
+          font-size: 20px;
+        }
+
+      }
+      .logo-text {
+        color: white;
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      .download-bt {
+        height: 30px;
+        display: inline-block;
+        border: 1px solid white;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        .download-bt-content {
+          color: white;
+        }
+      }
+    }
+  }
+  .nav-bar {
+    width: 100%;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    z-index: 100;
+    height: 40px;
+    display: flex;
+    border-bottom: 1px solid #efefef;
+    .nav-bar-item {
+      width: 33.333333333%;
+      height: 100%;
+      display: flex;
+      color: #333333;
+      justify-content: center;
+
+      font-size: 15px;
+      .tabtxt {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+      }
+      &.active {
+        .tabtxt {
+          border-bottom: 2px solid #d43c33;
+        }
+      }
+    }
+  }
+  .main-content {
+    min-height: 100vh;
+    padding-top: 104px;
+    .page-1, .page-2, .page-3 {
+      display: none;
+      &.active {
+        display: inherit;
+      }
+    }
+  }
+}
