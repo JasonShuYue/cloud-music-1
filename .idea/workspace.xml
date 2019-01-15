@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fd9339f-ac91-4b94-a31f-059c174699c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/css/song.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/song.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/song.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/song.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48766738">
+    <splitter split-orientation="horizontal" split-proportion="0.5602537">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -35,11 +38,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/admin.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="42" />
+                <state relative-caret-position="315">
+                  <caret line="65" column="75" lean-forward="true" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
                   <folding>
                     <element signature="n#aside#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                   </folding>
@@ -48,22 +51,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-                  <folding>
-                    <element signature="n#ul#0;n#section#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/song.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="468">
-                  <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+                <state relative-caret-position="345">
+                  <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
                   <folding>
                     <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                   </folding>
@@ -80,6 +71,18 @@
       </split-first>
       <split-second>
         <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="260">
+                  <caret line="78" column="36" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="36" />
+                  <folding>
+                    <element signature="n#ul#0;n#section#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/song/app.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -94,7 +97,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/css/song.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="249">
@@ -122,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selec</find>
-      <find>create</find>
       <find>cdn</find>
       <find>download-bt</find>
       <find>16px</find>
@@ -142,7 +143,6 @@
       <find>this.view.play</find>
       <find>play</find>
       <find>upload-form</find>
-      <find>sv</find>
       <find>ne</find>
       <find>cover</find>
       <find>update</find>
@@ -150,8 +150,11 @@
       <find>lyrics</find>
       <find>v =&gt;</find>
       <find>console</find>
-      <find>song-title</find>
       <find>song-name</find>
+      <find>sv</find>
+      <find>av-</find>
+      <find>node_modules</find>
+      <find>song-title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,16 +181,16 @@
         <option value="$PROJECT_DIR$/src/js/index/mainPage.js" />
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/css/common.scss" />
-        <option value="$PROJECT_DIR$/src/admin.html" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/js/admin/song-form.js" />
         <option value="$PROJECT_DIR$/src/js/admin/song-list.js" />
         <option value="$PROJECT_DIR$/src/css/admin.scss" />
         <option value="$PROJECT_DIR$/src/js/index/song-list.js" />
         <option value="$PROJECT_DIR$/src/js/song/app.js" />
         <option value="$PROJECT_DIR$/src/css/index.scss" />
-        <option value="$PROJECT_DIR$/src/song.html" />
         <option value="$PROJECT_DIR$/src/css/song.scss" />
+        <option value="$PROJECT_DIR$/src/song.html" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/admin.html" />
       </list>
     </option>
   </component>
@@ -218,39 +221,6 @@
               <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
               <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-music-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-music-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="song" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,12 +305,12 @@
       <workItem from="1546605259447" duration="3920000" />
       <workItem from="1546787252601" duration="1673000" />
       <workItem from="1546822527625" duration="1200000" />
-      <workItem from="1547445349232" duration="46810000" />
+      <workItem from="1547445349232" duration="48456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102637000" />
+    <option name="totallyTimeSpent" value="104283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -492,26 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="n#ul#0;n#section#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="42" />
-          <folding>
-            <element signature="n#aside#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/admin/new-song.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -578,16 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/song.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/song.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -595,6 +535,48 @@
           <folding>
             <element signature="e#704#2023#0" />
             <element signature="e#2414#2432#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/song.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/qiniu-min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="36" />
+          <folding>
+            <element signature="n#ul#0;n#section#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="65" column="75" lean-forward="true" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
+          <folding>
+            <element signature="n#aside#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
