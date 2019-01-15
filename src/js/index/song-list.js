@@ -22,12 +22,12 @@
         </li>
         `,
         render(data) {
-            console.log(data)
             let needs = ['name', 'singer', 'id'];
             data.map((song) => {
                 let html = this.template;
                 needs.map( key => {
-                    html = html.replace(`__${key}__`, song[key] || '');
+                    let regexp = new RegExp(`__${key}__`, 'g');
+                    html = html.replace(regexp, song[key] || '');
                 });
                 $(this.el).append(html)
             })
@@ -61,9 +61,7 @@
         init(view, model) {
             this.view = view;
             this.model = model;
-
             this.model.fetchAll().then(() => {
-                console.log(this.model.data)
                 this.view.render(this.model.data.songs);
             });
         }

@@ -106,12 +106,56 @@
       .song-title {
         line-height: 1.1;
         font-size: 20px;
+        margin-bottom: 10px;
         .song-name {
           color: #fefefe;
         }
         .song-singer {
           font-size: 18px;
         }
+      }
+      .lyric {
+        overflow: hidden;
+        height: 72px;
+        .lines {
+          padding-top: 24px;
+          p {
+            padding: 2px 0;
+            transition: all 0.5s;
+            &.active {
+              color: #fefefe;
+              transform: scale(1.1);
+            }
+          }
+        }
+
+      }
+    }
+    .footer-wrapper {
+      position:absolute;
+      width: 100%;
+      bottom: 10px;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      .open-bt, .download-bt {
+        width: 48%;
+        padding: 8px;
+        display: inline-block;
+        text-align: center;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border: 1px solid #d43c33;
+        font-size: 18px;
+      }
+      .open-bt {
+        color: #d43c33;
+      }
+      .download-bt {
+        background: #d43c33;
+        color: #fff;
       }
     }
   }
