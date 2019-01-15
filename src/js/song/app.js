@@ -1,22 +1,36 @@
 {
     let view = {
         el: '#song-wrapper',
-        template: `
-            <audio src=__url__></audio>
-        `,
         play() {
-          let audio = $(this.el).find('audio')[0];
-          console.log(audio)
-          audio.play();
+            let audio = $(this.el).find('audio')[0];
+            audio.play();
         },
         pause() {
             let audio = $(this.el).find('audio')[0];
             audio.pause();
         },
         render(data) {
-            let html = this.template;
-            html = html.replace('__url__', data.url || '');
-            $(this.el).html(html);
+            let song = data.song;
+            let audio = $(this.el).find('audio')[0];
+            if($(audio).attr('src') !== song.url) {
+                $(audio).attr('src', song.url);
+                audio.onended = ()=>{ window.eventHub.emit('songEnd', null) }
+            }
+            $(this.el).find('.img-bg').css('background-image', `url(${song.cover})`);
+            $(this.el).find('.cover').attr('src', song.cover);
+
+            if(data.status === "playing") {
+                $(this.el).find('.disc-container').addClass('playing');
+            } else {
+                $(this.el).find('.disc-container').removeClass('playing');
+            }
+
+            // song-description
+            $(this.el).find('.song-description .song-name').text(song.name);
+            $(this.el).find('.song-description .song-singer').text(song.singer);
+
+
+
         }
     };
 
@@ -27,6 +41,7 @@
                 singer: '',
                 id: '',
                 url: '',
+                cover: '',
             },
             status: 'paused'
         },
@@ -68,11 +83,27 @@
             this.model = model;
             this.model.fetch().then(() => {
                 this.view.render(this.model.data);
-
-                setTimeout(() => {
-                    this.view.play();
-                }, 2000);
             });
+
+            window.eventHub.on('songEnd', (data) => {
+                this.model.data.status = 'paused';
+                this.view.render(this.model.data);
+            });
+            this.bindEvents();
+        },
+        bindEvents() {
+            $(this.view.el).on('click', '.icon-container', (e) => {
+                // 通过改变data里面的status状态来改变UI
+                let status = this.model.data.status;
+                if(status === "playing") {
+                    this.model.data.status = 'paused';
+                    this.view.pause();
+                } else {
+                    this.model.data.status = 'playing';
+                    this.view.play();
+                }
+                this.view.render(this.model.data);
+            })
         }
     };
 

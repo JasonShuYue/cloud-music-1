@@ -1,0 +1,118 @@
+
+.song-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .img-bg {
+    height: 100%;
+    width: 100%;
+    background: transparent center no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: rgba(0, 0, 0, .5);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .song-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    .pointer {
+      width: 26%;
+      position: absolute;
+      left: 45%;
+      z-index: 100;
+      transform: rotate(-4deg);
+      top: -4px;
+    }
+    .disc-container {
+      position: relative;
+      margin-top: 16%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon-container {
+        position: absolute;
+        color: white;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+
+        .icon-play, .icon-pause {
+          font-size: 54px;
+        }
+        .icon-pause {
+          display: none;
+        }
+      }
+      .dist {
+        width: 80%;
+        animation: rotate 10s infinite linear;
+        animation-play-state: paused;
+      }
+      .dist-light {
+        width: 80%;
+        position: absolute;
+        animation: rotate 10s infinite linear;
+        animation-play-state: paused;
+      }
+      .cover {
+        width: 52%;
+        position: absolute;
+        border-radius: 50%;
+        animation: rotate 10s infinite linear;
+        animation-play-state: paused;
+      }
+      &.playing {
+        .dist, .dist-light, .cover {
+          animation-play-state: running;
+        }
+        .icon-container {
+          .icon-play {
+            display: none;
+          }
+          .icon-pause {
+            display: inherit;
+          }
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .song-description {
+      flex: 1;
+      color: #AEABAC;
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 35px;
+      .song-title {
+        line-height: 1.1;
+        font-size: 20px;
+        .song-name {
+          color: #fefefe;
+        }
+        .song-singer {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
