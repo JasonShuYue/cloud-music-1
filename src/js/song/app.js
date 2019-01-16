@@ -25,7 +25,6 @@
                     }
                 }
             }
-            console.log(index)
             this.activeLyrics(index);
         },
         activeLyrics(index) {
@@ -119,7 +118,7 @@
 
             return query.get(id).then((song) => {
                 let { attributes } = song;
-                Object.assign(this.data.song, {...attributes});
+                Object.assign(this.data.song, song.attributes);
             }, function (error) {
                 // 异常处理
             });
@@ -157,7 +156,7 @@
                 }
                 this.view.render(this.model.data);
             })
-        }
+        },
     };
 
     controller.init(view, model);

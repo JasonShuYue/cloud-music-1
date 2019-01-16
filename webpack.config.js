@@ -24,9 +24,17 @@ module.exports = {
                 use: [
                     "style-loader", // creates style nodes from JS strings
                     "css-loader", // translates CSS into CommonJS
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require('autoprefixer')({browsers: ['last 5 versions']})
+                            ]
+                        }
+                    },
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
-            }
+            },
         ]
     }
 };

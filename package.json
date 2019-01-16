@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.4",
     "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
@@ -22,11 +23,15 @@
   },
   "dependencies": {
     "css-loader": "^2.1.0",
+    "cssnano": "^4.1.8",
     "jquery": "^3.3.1",
     "leancloud-storage": "^3.11.1",
-    "style-loader": "^0.23.1",
     "plupload": "^2.3.2",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.5.0",
     "qiniu": "^7.2.1",
-    "qiniu-js": "^1.0.22"
+    "qiniu-js": "^1.0.22",
+    "style-loader": "^0.23.1",
+    "sugarss": "^2.0.0"
   }
 }

@@ -49,7 +49,7 @@
                 songs.map(song => {
                     let hash = {};
                     let {id, attributes} = song;
-                    Object.assign(hash, {...attributes, id})
+                    Object.assign(hash, {id}, song.attributes);
                     this.data.songs.unshift(hash)
                 })
                 return songs;
